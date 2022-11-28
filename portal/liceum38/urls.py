@@ -20,13 +20,13 @@ from management import views as v2
 from subjects import views as v3
 from projects import views as v4
 
-managment_parts = [
-    path('', v2.index)
+management_parts = [
+    path('', v2.index),
 ]
 
 urlpatterns = [
     path('announcements', v1.index,),
-    path('management', include(managment_parts)),
+    path('management/', include(management_parts)),
     path('subjects', v3.index),
     path('projects', v4.index),
     path('', v2.front),
