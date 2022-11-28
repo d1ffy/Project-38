@@ -22,6 +22,7 @@ from projects import views as v4
 
 management_parts = [
     path('', v2.index),
+    path('postuser/', v2.postuser),
 ]
 
 urlpatterns = [

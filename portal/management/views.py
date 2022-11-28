@@ -2,12 +2,12 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 def index(request):
-    header = "Данные пользователя"
-    user = {"name": "Alex", "age" : "38"}
-    address = ("Абиросова", 4, 36)
-    langs = ["Python", "Java", "C++"]
-    data={"header": header, "address": address, "langs": langs, "user": user}
-    return render(request, "index.html", context=data)
+    return render(request, "index.html")
+
+def postuser(request):
+    name= request.POST.get("name")
+    age = request.POST.get("age")
+    return HttpResponse(f"""<h2>Name: {name}, Age: {age}</h2>""")
 
 def front(r):
     return HttpResponse(f"""
